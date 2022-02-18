@@ -19,9 +19,9 @@ logging.basicConfig(
 )
 logging.getLogger("requests").setLevel(logging.WARNING)  # get rid of https debug stuff
 
-logging.info("STARTING NBA ELT PIPELINE SCRIPT Version: 1.2.7")
-# logging.warning("STARTING NBA ELT PIPELINE SCRIPT Version: 1.2.7")
-# logging.error("STARTING NBA ELT PIPELINE SCRIPT Version: 1.2.7")
+logging.info("STARTING NBA ELT PIPELINE SCRIPT Version: 1.2.8")
+# logging.warning("STARTING NBA ELT PIPELINE SCRIPT Version: 1.2.8")
+# logging.error("STARTING NBA ELT PIPELINE SCRIPT Version: 1.2.8")
 
 # helper sql function - has to be here & not utils bc of globals().items()
 def write_to_sql(con, data, table_type):
@@ -171,4 +171,4 @@ if __name__ == "__main__":
     logs = logs.query("errors.str.contains('Failed')", engine="python")
     execute_email_function(logs)
 
-logging.info("FINISHED NBA ELT PIPELINE SCRIPT Version: 1.2.7")
+logging.info("FINISHED NBA ELT PIPELINE SCRIPT Version: 1.2.8")
