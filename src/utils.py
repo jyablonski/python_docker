@@ -1066,6 +1066,7 @@ def get_pbp_data(df: pd.DataFrame) -> pd.DataFrame:
         All PBP Data for the games in the input df
 
     """
+    game_date = df['date'][0]
     try:
         if len(df) > 0:
             yesterday_hometeams = (
@@ -1190,7 +1191,7 @@ def get_pbp_data(df: pd.DataFrame) -> pd.DataFrame:
                     df["scoreHome"] = df["scoreHome"].fillna(method="ffill")
                     df["scoreHome"] = df["scoreHome"].fillna(0)
                     df["marginScore"] = df["scoreHome"] - df["scoreAway"]
-                    df["Date"] = datetime.now().date() - timedelta(days=1)
+                    df["Date"] = game_date
                     df["scrape_date"] = datetime.now().date()
                     df = df.rename(
                         columns={
