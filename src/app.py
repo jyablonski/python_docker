@@ -96,7 +96,7 @@ if __name__ == "__main__":
     boxscores = validate_schema(boxscores, boxscores_cols)
     injury_data = validate_schema(injury_data, injury_cols)
     opp_stats = validate_schema(opp_stats, opp_stats_cols)
-    pbp_stats = validate_schema(pbp_data, pbp_cols)
+    pbp_data = validate_schema(pbp_data, pbp_cols)
     reddit_data = validate_schema(reddit_data, reddit_cols)
     reddit_comment_data = validate_schema(reddit_comment_data, reddit_comment_cols)
     odds = validate_schema(odds, odds_cols)
